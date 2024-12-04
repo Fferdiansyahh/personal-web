@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="icon" href="../Asset/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-index.css" />
+
+</head>
+
+<body>
+    <nav>
+        <div class="navbar-left">
+            <a href="index.html">
+                <img class="icon" src="../Asset/DU.png" alt="Gambar Logo" />
+            </a>
+            <ul class="navbar-left1">
+                <li>
+                    <a href="index.html" class="navbar-home">Home</a>
+                </li>
+                <li>
+                    <a href="#"> Blog </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <a href="contact.html" class="navbar-right1"> Contact Me</a>
+        </div>
+    </nav>
+
+
+
+
+    <main class="contact-section">
+        <form id="contactForm" class="contact-form">
+            <div class="form-title">
+                <h2>GET IN TOUCH</h2>
+            </div>
+            <div class="form-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" class="form-input" type="text" required />
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="form-input" type="email" required />
+            </div>
+
+            <div class="form-field">
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" name="phoneNumber" class="form-input" type="number" required />
+            </div>
+
+            <div class="form-field">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" class="form-input" required></input>
+            </div>
+
+            <div class="form-field">
+                <label for="skill">Skill</label>
+                <select id="skill" name="skill" class="form-input" required>
+                    <option></option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="message-contact" for="message">Your Message</label>
+                <input id="message" name="message" class="form-input-area" required></input>
+            </div>
+
+            <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
+        </form>
+    </main>
+
+    <script src="submitForm.js"></script>
+    <script src="belajar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/* Responsive End */
+
+body {
+    margin: 0px;
+    font-family: 'Poppins', sans-serif
+}
+
+/* Home Page Styles Start */
+
+nav {
+    background-color: #f4f3f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    height: 45px;
+}
+
+nav a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-home {
+    font-weight: bold;
+}
+
+.navbar-left1 {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.icon {
+    align-items: center;
+    margin-top: 6px;
+    max-width: max-content;
+    max-width: max-content;
+
+}
+
+.navbar-right {
+    align-content: center;
+}
+
+
+.navbar-right1 {
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+/* Home Page Styles End */
+.main1 {
+    background-color: #e2e6ea;
+    /* padding: 50px 45px; */
+}
+
+.kotak1 {
+    border: 1px solid white;
+    background-color: white;
+    margin: 50px 45px;
+    height: 100%;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.kotak2 {
+    border: 1px solid white;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+
+
+}
+
+.kotaka {
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+}
+
+.k1 {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+
+.kotakb {
+
+    /* margin: 0px 200px; */
+    align-items: center;
+    width: 350px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    line-height: 0.5px;
+    padding-bottom: 20px;
+}
+
+.gb {
+    width: 350px;
+    object-fit: contain;
+    clear: both;
+    display: table;
+    margin-bottom: 20px;
+}
+
+
+
+
+.btu {
+    height: 12px;
+    width: 12;
+    padding-left: 5px
+}
+
+.bts {
+    height: 55px;
+    width: 55;
+    margin: 0px 7px;
+
+}
+
+.link-bts {
+    width: max-content;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.icon {
+    height: 20px;
+}
+
+
+
+
+
+/* Responsive Start */
+@media (max-width: 800px) {
+    .kotak2 {
+        flex-direction: column;
+    }
+}
