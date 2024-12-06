@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Project</title>
+  <link rel="icon" href="../Asset/icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-index.css" />
+
+</head>
+
+<body>
+  <nav>
+    <div class="navbar-left">
+      <a href="index.html">
+        <img class="icon" src="../Asset/DU.png" alt="Gambar Logo" />
+      </a>
+      <ul class="navbar-left1">
+        <li>
+          <a href="index.html" class="navbar-home">Home</a>
+        </li>
+        <li>
+          <a href="myproject.html" class="navbar-active">My Project</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-right">
+      <a href="contact.html" class="navbar-right1"> Contact Me</a>
+    </div>
+  </nav>
+
+
+  <main class="contact-section">
+    <form onsubmit="addBlog(event)" id="contactForm" class="contact-form">
+      <div class="form-title">
+        <h2>ADD MY PROJECT</h2>
+      </div>
+      <div class="form-field">
+        <label for="project-name">Project Name</label>
+        <input id="project-name" name="name" class="form-input" type="text" required />
+      </div>
+
+      <div class="form-date">
+        <div class="form-field-date">
+          <label for="start-date">Start Date</label>
+          <input id="start-date" name="start-date" class="form-input-date" type="date" value="today" min="2023-01-01"
+            max="2030-12-31" required />
+        </div>
+        <div class="form-field-date">
+          <label for="end-date">End Date</label>
+          <input id="end-date" name="end-date" class="form-input-date" type="date" value="newDate" min="2023-01-01"
+            max="2030-12-31" required />
+
+        </div>
+      </div>
+
+      <div class="form-field-area">
+        <label class="message-contact" for="message">Your Message</label>
+        <textarea rows="6" id="your-message" name="message" class="form-input-area" required></textarea>
+      </div>
+
+
+
+      <div class="form-field-box">
+        <div>
+          <label>Technologies</label>
+        </div>
+      </div>
+      <div class="form-input-box">
+        <div>
+          <input type="checkbox" id="" name="nodejs" value="nodejs">
+          <label for="nodejs">Node Js</label><br>
+          <input type="checkbox" id="" name="nextjs" value="nextjs">
+          <label for="nextjs">Next Js</label>
+        </div>
+        <div>
+          <input type="checkbox" id="" name="reachjs" value="reachjs">
+          <label for="reachjs">Reach Js</label><br>
+          <input type="checkbox" id="typescript" name="typescript" value="typescript">
+          <label for="TypeScript">TypeScript</label>
+        </div>
+      </div>
+
+
+      <div class="form-field-image">
+        <label for="upload-image">Upload Image</label>
+        <div for="upload-image" class="input-image">
+          <div class="choose">
+            <label for="upload-image">choose</label>
+          </div>
+          <input id="upload-image" name="upload-image" hidden type="file" required placeholder="upload image" />
+        </div>
+      </div>
+
+      <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
+    </form>
+
+    <hr />
+
+    <section class="blog-container">
+      <div class="project-title">
+        <p>MY PROJECT</p>
+      </div>
+      <div id="blogList" class="blog-list">
+        <div class="blog-list-item">
+          <div class="blog-image-title">
+            <div class="blog-image">
+              <img src="./Asset/blog-img.png" alt="blog-image" />
+            </div>
+            <div>
+              <p>
+                <a href="blog-detail.html" class="blog-item-title">
+                  Pasar Coding di Indonesia Masih Menjanjikan
+                </a>
+              </p>
+              <div>
+                <p class="detail-blog-content"> durasi : 3 bulan </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              explicabo totam labore sit tempore, voluptate vitae nesciunt in
+              maiores rerum, vero veritatis numquam iure aut sunt nemo.
+            </p>
+          </div>
+          <div>
+            <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/java.png" alt="Logo Java "></img>
+          </div>
+          <div class="blog-content">
+            <div class="btn-group">
+              <button class="btn-edit">Edit Post</button>
+              <button class="btn-post">Post Blog</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-list-item">
+          <div class="blog-image-title">
+            <div class="blog-image">
+              <img src="./Asset/blog-img.png" alt="blog-image" />
+            </div>
+            <div>
+              <p>
+                <a href="blog-detail.html" class="blog-item-title">
+                  Pasar Coding di Indonesia Masih Menjanjikan
+                </a>
+              </p>
+              <div>
+                <p class="detail-blog-content"> durasi : 3 bulan </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="blog-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              explicabo totam labore sit tempore, voluptate vitae nesciunt in
+              maiores rerum, vero veritatis numquam iure aut sunt nemo.
+            </p>
+          </div>
+          <div>
+            <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/java.png" alt="Logo Java "></img>
+          </div>
+          <div class="blog-content">
+            <div class="btn-group">
+              <button class="btn-edit">Edit Post</button>
+              <button class="btn-post">Post Blog</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <script src="submitForm.js"></script>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="belajar.js"></script>
+</body>
+
+</html>
