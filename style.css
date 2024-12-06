@@ -12,7 +12,7 @@
 }
 
 .contact-form {
-    width: 100%;
+    width: 500px;
     border: 1px solid none;
     border-radius: 10px;
     padding-bottom: 50px;
@@ -293,5 +293,11 @@ hr {
     .blog-list-item {
         margin: 15px 0px;
     }
+
+    .contact-form {
+        width: 100%;
+    }
+
+
 
 }
