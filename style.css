@@ -194,7 +194,7 @@ hr {
     width: 300px;
     background-color: white;
     border-radius: 7px;
-    margin: 0px 15px;
+    margin: 15px 15px;
 }
 
 .blog-image-title {
@@ -278,11 +278,47 @@ hr {
     margin: 0;
     text-align: justify;
     font-size: 11px;
+}
 
+.relative-time {
+
+    font-size: 12px;
+    color: #a2a2a2;
+    text-align: right;
 }
 
 
 
+/* Blog Page */
+
+.blog-main {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+}
+
+.blog-title {
+    /* text-align: cente; */
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.author_date {}
+
+.blog-icon-page {
+    width: auto;
+    height: 50lvh;
+    margin: 20px 0px;
+}
+
+.blog-content-page {
+
+    text-align: justify;
+}
+
+
+/* Responsive layar */
 
 @media (max-width: 800px) {
     .blog-list {
@@ -291,12 +327,13 @@ hr {
     }
 
     .blog-list-item {
-        margin: 15px 0px;
+        /* margin: 15px 15px; */
     }
 
     .contact-form {
         width: 100%;
     }
+
 
 
 

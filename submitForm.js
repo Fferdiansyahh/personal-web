@@ -14,24 +14,28 @@ function addBlog(e) {
     var dt2 = new Date(de);
     var diff = dt2.getTime() - dt1.getTime();
     var days = (diff / (1000 * 60 * 60 * 24));
-    var month = (days / 30).toFixed(1);
+    var monthss = (days / 30).toFixed(1);
 
+    // || days == "" || monthss == ""
 
-
-    if (projectname == "" || message == "" || days == "" || month == "" || imageInput.files.length === 0) {
+    if (projectname == "" || message == "" || imageInput.files.length === 0) {
         return alert("All input fields cannot be empty");
     }
 
     let image = URL.createObjectURL(imageInput.files[0]);
+
+
+
 
     let blog = {
         author: "Ferdian",
         projectname: projectname,
         message: message,
         days: days,
-        month: month,
+        monthss: monthss,
         image: image,
         postedAt: new Date(),
+
     };
 
     blogs.push(blog);
@@ -43,10 +47,11 @@ function renderBlog() {
     console.log(blogs);
 
     let blogListElement = document.getElementById("blogList");
-
     blogListElement.innerHTML = firstBlogContent();
 
     for (let i = 0; i < blogs.length; i++) {
+        let formattedDate = formatDataToWIB(blogs[i].postedAt);
+
         // menampilkan blogs yang sudah kita buat dengan mengisi form
         console.log(blogs[i]);
 
@@ -58,12 +63,13 @@ function renderBlog() {
             </div>
             <div>
               <p>
-                <a href="blog-detail.html" class="blog-item-title">
+                <a href="blog.html" class="blog-item-title">
                    ${blogs[i].projectname}
                 </a>
               </p>
               <div>
-                <p class="detail-blog-content"> durasi : ${blogs[i].days} hari </p>
+                <p class="detail-blog-content"> durasi : ${blogs[i].days} hari </p>       
+                <p>${formattedDate}</p>         
               </div>
             </div>
           </div>
@@ -71,6 +77,7 @@ function renderBlog() {
             <p class="blog-text">
             ${blogs[i].message}
             </p>
+            <p class="relative-time">${getRelativeTime(blogs[i].postedAt)}</p>
           </div>
           <div>
             <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
@@ -103,6 +110,7 @@ function firstBlogContent() {
               </p>
               <div>
                 <p class="detail-blog-content"> durasi : 3 bulan </p>
+                
               </div>
             </div>
           </div>
@@ -125,4 +133,40 @@ function firstBlogContent() {
             </div>
           </div>
     `;
+}
+
+function formatDataToWIB(date) {
+    let months = [
+        "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+        "Jul", "Agus", "Sep", "Okt", "Nov", "Des",
+    ];
+    let day = date.getDate().toString().padStart(2, "0");
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+
+    let hours = date.getHours().toString().padStart(2, "0");
+    let minutes = date.getMinutes().toString().padStart(2, "0");
+
+    let formattedDate = `${day} ${month} ${year} ${hours}:${minutes} WIB`;
+
+    return formattedDate;
+
+}
+
+function getRelativeTime(targetDate) {
+    let now = new Date();
+    let diffInSeconds = Math.floor((now - targetDate) / 1000); // 7.2 = 7 satuan detik /1000
+
+    console.log(now);
+    console.log(diffInSeconds);
+
+    if (diffInSeconds < 60) {
+        return `${diffInSeconds} second${diffInSeconds > 1 ? "s" : ""} ago`;
+    }
+
+    let diffInMinutes = Math.floor(diffInSeconds / 60);
+    if (diffInMinutes < 60) {
+        return `${diffInMinutes} minute${diffInMinutes > 1 ? "s" : ""} ago`;
+    }
+
 }
