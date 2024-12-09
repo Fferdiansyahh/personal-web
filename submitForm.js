@@ -1,61 +1,93 @@
 let blogs = []; // length nya adalah 0
 
 function addBlog(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let projectname = document.getElementById("project-name").value;
-    let message = document.getElementById("your-message").value;
-    let ds = document.getElementById("start-date").value;
-    let de = document.getElementById("end-date").value;
-    let imageInput = document.getElementById("upload-image");
+  let projectname = document.getElementById("project-name").value;
+  let message = document.getElementById("your-message").value;
 
+  let imageInput = document.getElementById("upload-image");
 
-    var dt1 = new Date(ds);
-    var dt2 = new Date(de);
-    var diff = dt2.getTime() - dt1.getTime();
-    var days = (diff / (1000 * 60 * 60 * 24));
-    var monthss = (days / 30).toFixed(1);
+  let startDate = document.getElementById("start-date").value;
+  let endDate = document.getElementById("end-date").value;
 
-    // || days == "" || monthss == ""
+  // let days = (((Math.floor((endDate - startDate) / 1000) / 60) / 60) / 24);
 
-    if (projectname == "" || message == "" || imageInput.files.length === 0) {
-        return alert("All input fields cannot be empty");
-    }
-
-    let image = URL.createObjectURL(imageInput.files[0]);
+  // if (days < 60) {
+  //   return `${days} day${days > 1 ? "s" : ""} ago`;
+  // }
 
 
 
 
-    let blog = {
-        author: "Ferdian",
-        projectname: projectname,
-        message: message,
-        days: days,
-        monthss: monthss,
-        image: image,
-        postedAt: new Date(),
 
-    };
+  var dt1 = new Date(startDate);
+  var dt2 = new Date(endDate);
+  var diff = dt2.getTime() - dt1.getTime();
+  var days = `${(diff / (1000 * 60 * 60 * 24))}`;
 
-    blogs.push(blog);
+  var months = Math.floor(days / 30);
 
-    renderBlog();
+  // let checkBox = document.querySelectorAll("input[type=checkbox]:checked");
+  // for (let i = 0; i < checkBox.length; i++) {
+  //   checkBox.push(checkBox[i].value);
+  // }
+
+  var checkBox = document.querySelectorAll('input[type="checkbox"]:checked ');
+  var techno = [];
+
+  checkBox.forEach(function (checkBox) {
+    techno.push(checkBox.value)
+  })
+
+  var technologies = techno.join(', ');
+  // return technologies;
+
+
+
+  // || days == "" || monthss == ""
+
+  if (projectname == "" || message == "" || imageInput.files.length === 0) {
+    return alert("All input fields cannot be empty");
+  }
+
+
+  if (months > 30) {
+    return `${months} day${months > 1 ? "s" : ""}`;
+  }
+
+  let image = URL.createObjectURL(imageInput.files[0]);
+
+
+  let blog = {
+    author: "Ferdian",
+    projectname: projectname,
+    message: message,
+    days: days,
+    months: months,
+    image: image,
+    technologies: technologies,
+    postedAt: new Date(),
+  };
+
+  blogs.push(blog);
+
+  renderBlog();
 }
 
 function renderBlog() {
-    console.log(blogs);
+  console.log(blogs);
 
-    let blogListElement = document.getElementById("blogList");
-    blogListElement.innerHTML = firstBlogContent();
+  let blogListElement = document.getElementById("blogList");
+  blogListElement.innerHTML = firstBlogContent();
 
-    for (let i = 0; i < blogs.length; i++) {
-        let formattedDate = formatDataToWIB(blogs[i].postedAt);
+  for (let i = 0; i < blogs.length; i++) {
+    let formattedDate = formatDataToWIB(blogs[i].postedAt);
 
-        // menampilkan blogs yang sudah kita buat dengan mengisi form
-        console.log(blogs[i]);
+    // menampilkan blogs yang sudah kita buat dengan mengisi form
+    console.log(blogs[i]);
 
-        blogListElement.innerHTML += `    
+    blogListElement.innerHTML += `    
         <div id="${i}" class="blog-list-item">
           <div class="blog-image-title">
             <div class="blog-image">
@@ -68,8 +100,9 @@ function renderBlog() {
                 </a>
               </p>
               <div>
-                <p class="detail-blog-content"> durasi : ${blogs[i].days} hari </p>       
+                <p class="detail-blog-content"> durasi : ${blogs[i].months} Month ${blogs[i].days} day </p>       
                 <p>${formattedDate}</p>         
+                <p>${blogs[i].technologies}</p>
               </div>
             </div>
           </div>
@@ -92,11 +125,11 @@ function renderBlog() {
           </div>
        
     `;
-    }
+  }
 }
 
 function firstBlogContent() {
-    return `
+  return `
        <div class="blog-list-item">
           <div class="blog-image-title">
             <div class="blog-image">
@@ -136,37 +169,55 @@ function firstBlogContent() {
 }
 
 function formatDataToWIB(date) {
-    let months = [
-        "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
-        "Jul", "Agus", "Sep", "Okt", "Nov", "Des",
-    ];
-    let day = date.getDate().toString().padStart(2, "0");
-    let month = months[date.getMonth()];
-    let year = date.getFullYear();
+  let months = [
+    "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+    "Jul", "Agus", "Sep", "Okt", "Nov", "Des",
+  ];
+  let day = date.getDate().toString().padStart(2, "0");
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
 
-    let hours = date.getHours().toString().padStart(2, "0");
-    let minutes = date.getMinutes().toString().padStart(2, "0");
+  let hours = date.getHours().toString().padStart(2, "0");
+  let minutes = date.getMinutes().toString().padStart(2, "0");
 
-    let formattedDate = `${day} ${month} ${year} ${hours}:${minutes} WIB`;
+  let formattedDate = `${day} ${month} ${year} ${hours}:${minutes} WIB`;
 
-    return formattedDate;
+  return formattedDate;
 
 }
 
 function getRelativeTime(targetDate) {
-    let now = new Date();
-    let diffInSeconds = Math.floor((now - targetDate) / 1000); // 7.2 = 7 satuan detik /1000
+  let now = new Date();
 
-    console.log(now);
-    console.log(diffInSeconds);
+  let diffInSeconds = Math.floor((now - targetDate) / 1000); // 7.2 = 7 satuan detik /1000
 
-    if (diffInSeconds < 60) {
-        return `${diffInSeconds} second${diffInSeconds > 1 ? "s" : ""} ago`;
-    }
 
-    let diffInMinutes = Math.floor(diffInSeconds / 60);
-    if (diffInMinutes < 60) {
-        return `${diffInMinutes} minute${diffInMinutes > 1 ? "s" : ""} ago`;
-    }
+  console.log(now);
+  console.log(diffInSeconds);
 
+  if (diffInSeconds < 60) {
+    return `${diffInSeconds} second${diffInSeconds > 1 ? "s" : ""} ago`;
+  }
+
+  let diffInMinutes = Math.floor(diffInSeconds / 60);
+  if (diffInMinutes < 60) {
+    return `${diffInMinutes} minute${diffInMinutes > 1 ? "s" : ""} ago`;
+  }
+
+  let diffInHours = Math.floor(diffInMinutes / 60);
+  if (diffInHours < 60) {
+    return `${diffInHours} minute${diffInHours > 1 ? "s" : ""} ago`;
+  }
+
+  let diffInMonths = Math.floor(diffInHours / 60);
+  if (diffInMonths < 60) {
+    return `${diffInMonths} minute${diffInMonths > 1 ? "s" : ""} ago`;
+  }
+
+
+
+
+
+}
+function getRelativeDuring() {
 }

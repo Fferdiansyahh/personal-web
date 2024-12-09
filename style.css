@@ -148,15 +148,12 @@
     font-family: 'Poppins', sans-serif, ;
 }
 
-
-
-
 .form-input-box {
     display: flex;
     gap: 80px;
 }
 
-hr {
+.line {
     width: 80%;
 }
 
@@ -304,7 +301,7 @@ hr {
     margin: 0;
 }
 
-.author_date {}
+
 
 .blog-icon-page {
     width: auto;
@@ -326,10 +323,9 @@ hr {
         flex-direction: column;
     }
 
-    .blog-list-item {
-        /* margin: 15px 15px; */
-    }
-
+    /* .blog-list-item {
+        margin: 15px 15px;
+    }  */
     .contact-form {
         width: 100%;
     }

@@ -8,6 +8,7 @@ body {
     margin: 0px;
     font-family: 'Poppins', sans-serif;
     background-color: #e3e7eb;
+
 }
 
 /* Home Page Styles Start */
@@ -82,67 +83,103 @@ nav a {
 
 .kotak2 {
     border: 1px solid white;
-    height: 100%;
+    height: max-content;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 60px;
+    /* justify-items: center; */
+    gap: 30px;
     padding: 50px;
-
-
 }
 
 .kotaka {
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    height: 100%;
+    gap: 20px;
+    height: 70%;
+    margin: 30px 10px;
 
 }
 
 .k1 {
-    font-size: 14px;
+    font-size: 19px;
     text-align: justify;
     line-height: 1.5;
+    margin: 40px 0px;
 }
-
 
 .contact {
     display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 5px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.contact-down {
+    text-align: justify;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+
+
+.contact-img {
+
+    width: 150px;
+    padding: 5px 10px 0px 0px;
+}
+
+.down-img {
+    display: flex;
+    width: 200px;
+}
+
+.mid {
+    display: flex;
+    align-items: center;
+    width: auto;
+    flex-direction: row;
 }
 
 .contact-bts {
-
+    /* font-size: 17px; */
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
+
 }
 
 
 .kotakb {
 
     /* margin: 0px 200px; */
+    margin-bottom: 30px;
     align-items: center;
-    width: 100%;
+
+    width: 110%;
+    height: 60%;
     border: 1px solid white;
     border-radius: 5px;
 
     display: flex;
     flex-direction: column;
     line-height: 0.5px;
-    padding-bottom: 20px;
+
 }
 
 .gb {
     width: 100%;
+
     object-fit: contain;
     clear: both;
     display: table;
     margin-bottom: 20px;
 }
-
-
-
 
 .btu {
     height: 12px;
@@ -159,9 +196,12 @@ nav a {
 }
 
 .link-bts {
-    width: 100%;
-    justify-items: center;
+
     display: flex;
+
+
+
+
 }
 
 
@@ -179,23 +219,60 @@ nav a {
 
 
 /* Responsive Start */
+
+
 @media (max-width: 800px) {
+    .hrLine {
+        
+        width: 95%;
+    
+    }
+    
     .kotak2 {
         flex-direction: column;
+        padding: 30px;
+        align-items: center;
+
     }
 
+
     .link-bts {
-        text-align: center;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
     }
 
     .contact {
         flex-direction: column;
+        align-items: start;
         /* text-align: center; */
     }
 
+    .kotak1 {
+        margin: 25px 20px;
+        height: 100%;
 
+    }
 
+    .bts {
+        height: 35px;
+        width: 35px;
+        margin: 0px 7px;
+    }
+
+    .kotakb {
+
+        width: 75%;
+
+    }
+
+    .kotakb img {
+        height: 20%;
+    }
+
+    .k1 {
+        font-size: 13px;
+    }
 }
 
 
@@ -266,8 +343,3 @@ nav a {
 
 
 }
-
-
-
-
-/*  */
