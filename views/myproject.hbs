@@ -5,32 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Project</title>
-  <link rel="icon" href="../Asset/icon.png" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style-index.css" />
+  <link rel="icon" href="/Asset/image/icon.png" />
+  <link rel="stylesheet" href="/Asset/css/style.css" />
+  <link rel="stylesheet" href="/Asset/css/style-index.css" />
 
 </head>
 
 <body>
-  <nav>
-    <div class="navbar-left">
-      <a href="index.html">
-        <img class="icon" src="../Asset/DU.png" alt="Gambar Logo" />
-      </a>
-      <ul class="navbar-left1">
-        <li>
-          <a href="index.html" class="navbar-home">Home</a>
-        </li>
-        <li>
-          <a href="myproject.html" class="navbar-active">My Project</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="navbar-right">
-      <a href="contact.html" class="navbar-right1"> Contact Me</a>
-    </div>
-  </nav>
+  {{> navbar}}
 
 
   <main class="contact-section">
@@ -107,11 +89,11 @@
         <div class="blog-list-item">
           <div class="blog-image-title">
             <div class="blog-image">
-              <img src="./Asset/blog-img.png" alt="blog-image" />
+              <img src="./Asset/image/blog-img.png" alt="blog-image" />
             </div>
             <div>
               <p>
-                <a href="blog-detail.html" class="blog-item-title">
+                <a href="/blog" class="blog-item-title">
                   Pasar Coding di Indonesia Masih Menjanjikan
                 </a>
               </p>
@@ -129,9 +111,9 @@
             <p class="relative-time">5 Months ago</p>
           </div>
           <div>
-            <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
-            <img class="blog-icon" src="./Asset/andro.png" alt="Logo Android "></img>
-            <img class="blog-icon" src="./Asset/java.png" alt="Logo Java "></img>
+            <img class="blog-icon" src="./Asset/image/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/image/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/image/java.png" alt="Logo Java "></img>
           </div>
           <div class="blog-content">
             <div class="btn-group">
@@ -143,7 +125,7 @@
 
 
 
-        <script src="submitForm.js"></script>
+        <script src="/Asset/js/submitForm.js"></script>
       </div>
     </section>
 

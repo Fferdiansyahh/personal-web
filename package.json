@@ -1,0 +1,23 @@
+{
+  "name": "b59-personal-web",
+  "version": "1.0.0",
+  "description": "websitet pernoal web batch 59",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fferdiansyahh/b59-personal-web.git"
+  },
+  "author": "Ferdian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fferdiansyahh/b59-personal-web/issues"
+  },
+  "homepage": "https://github.com/Fferdiansyahh/b59-personal-web#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "hbs": "^4.2.0"
+  }
+}

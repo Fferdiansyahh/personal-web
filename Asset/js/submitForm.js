@@ -1,5 +1,6 @@
 let blogs = []; // length nya adalah 0
 
+
 function addBlog(e) {
   e.preventDefault();
 
@@ -95,14 +96,14 @@ function renderBlog() {
             </div>
             <div>
               <p>
-                <a href="blog.html" class="blog-item-title">
+                <a href="/blog" class="blog-item-title">
                    ${blogs[i].projectname}
                 </a>
               </p>
               <div>
-                <p class="detail-blog-content"> durasi : ${blogs[i].months} Month ${blogs[i].days} day </p>       
+                <p class="detail-blog-content"> durasi : ${getDuring(blogs[i].days)}</p>
                 <p>${formattedDate}</p>         
-                <p>${blogs[i].technologies}</p>
+                <p>${blogs[i].technologies} </p>
               </div>
             </div>
           </div>
@@ -113,9 +114,9 @@ function renderBlog() {
             <p class="relative-time">${getRelativeTime(blogs[i].postedAt)}</p>
           </div>
           <div>
-            <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
-            <img class="blog-icon" src="./Asset/andro.png" alt="Logo Android "></img>
-            <img class="blog-icon" src="./Asset/java.png" alt="Logo Java "></img>
+            <img class="blog-icon" src="./Asset/image/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/image/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/image/java.png" alt="Logo Java "></img>
           </div>
           <div class="blog-content">
             <div class="btn-group">
@@ -133,11 +134,11 @@ function firstBlogContent() {
        <div class="blog-list-item">
           <div class="blog-image-title">
             <div class="blog-image">
-              <img src="./Asset/blog-img.png" alt="blog-image" />
+              <img src="./Asset/image/blog-img.png" alt="blog-image" />
             </div>
             <div>
               <p>
-                <a href="blog-detail.html" class="blog-item-title">
+                <a href="/blog" class="blog-item-title">
                   Pasar Coding di Indonesia Masih Menjanjikan
                 </a>
               </p>
@@ -155,9 +156,9 @@ function firstBlogContent() {
             </p>
           </div>
           <div>
-            <img class="blog-icon" src="./Asset/play.png" alt="Logo Play Store "></img>
-            <img class="blog-icon" src="./Asset/andro.png" alt="Logo Android "></img>
-            <img class="blog-icon" src="./Asset/java.png" alt="Logo Java "></img>
+            <img class="blog-icon" src="./Asset/image/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/image/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/image/java.png" alt="Logo Java "></img>
           </div>
           <div class="blog-content">
             <div class="btn-group">
@@ -188,9 +189,7 @@ function formatDataToWIB(date) {
 
 function getRelativeTime(targetDate) {
   let now = new Date();
-
   let diffInSeconds = Math.floor((now - targetDate) / 1000); // 7.2 = 7 satuan detik /1000
-
 
   console.log(now);
   console.log(diffInSeconds);
@@ -213,11 +212,24 @@ function getRelativeTime(targetDate) {
   if (diffInMonths < 60) {
     return `${diffInMonths} minute${diffInMonths > 1 ? "s" : ""} ago`;
   }
-
-
-
-
-
 }
-function getRelativeDuring() {
+
+
+function getDuring(targetDate) {
+  let diffInDayss = Math.floor((targetDate));
+
+  let diffInMonthss = Math.floor((diffInDayss) / 30);
+  let diffInDaysss = ((diffInDayss) - (diffInMonthss * 30));
+
+
+  if (diffInMonthss > 0) {
+    return `${diffInMonthss} month${diffInMonthss > 1 ? "s" : ""}`;
+  }
+
+  // if (diffInDaysss > 0) {
+  //   `${diffInDaysss} month${diffInDaysss > 1 ? "s" : ""}`;
+  // }
+
+  console.log(diffInDaysss, diffInMonthss);
 }
+
