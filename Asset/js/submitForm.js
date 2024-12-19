@@ -1,6 +1,5 @@
 let blogs = []; // length nya adalah 0
 
-
 function addBlog(e) {
   e.preventDefault();
 
@@ -18,14 +17,10 @@ function addBlog(e) {
   //   return `${days} day${days > 1 ? "s" : ""} ago`;
   // }
 
-
-
-
-
   var dt1 = new Date(startDate);
   var dt2 = new Date(endDate);
   var diff = dt2.getTime() - dt1.getTime();
-  var days = `${(diff / (1000 * 60 * 60 * 24))}`;
+  var days = `${diff / (1000 * 60 * 60 * 24)}`;
 
   var months = Math.floor(days / 30);
 
@@ -38,13 +33,11 @@ function addBlog(e) {
   var techno = [];
 
   checkBox.forEach(function (checkBox) {
-    techno.push(checkBox.value)
-  })
+    techno.push(checkBox.value);
+  });
 
-  var technologies = techno.join(', ');
+  var technologies = techno.join(", ");
   // return technologies;
-
-
 
   // || days == "" || monthss == ""
 
@@ -52,13 +45,11 @@ function addBlog(e) {
     return alert("All input fields cannot be empty");
   }
 
-
   if (months > 30) {
     return `${months} day${months > 1 ? "s" : ""}`;
   }
 
   let image = URL.createObjectURL(imageInput.files[0]);
-
 
   let blog = {
     author: "Ferdian",
@@ -101,7 +92,9 @@ function renderBlog() {
                 </a>
               </p>
               <div>
-                <p class="detail-blog-content"> durasi : ${getDuring(blogs[i].days)}</p>
+                <p class="detail-blog-content"> durasi : ${getDuring(
+                  blogs[i].days
+                )}</p>
                 <p>${formattedDate}</p>         
                 <p>${blogs[i].technologies} </p>
               </div>
@@ -171,8 +164,18 @@ function firstBlogContent() {
 
 function formatDataToWIB(date) {
   let months = [
-    "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
-    "Jul", "Agus", "Sep", "Okt", "Nov", "Des",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agus",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Des",
   ];
   let day = date.getDate().toString().padStart(2, "0");
   let month = months[date.getMonth()];
@@ -184,15 +187,14 @@ function formatDataToWIB(date) {
   let formattedDate = `${day} ${month} ${year} ${hours}:${minutes} WIB`;
 
   return formattedDate;
-
 }
 
 function getRelativeTime(targetDate) {
   let now = new Date();
   let diffInSeconds = Math.floor((now - targetDate) / 1000); // 7.2 = 7 satuan detik /1000
 
-  console.log(now);
-  console.log(diffInSeconds);
+  // console.log(now);
+  // console.log(diffInSeconds);
 
   if (diffInSeconds < 60) {
     return `${diffInSeconds} second${diffInSeconds > 1 ? "s" : ""} ago`;
@@ -214,13 +216,11 @@ function getRelativeTime(targetDate) {
   }
 }
 
-
 function getDuring(targetDate) {
-  let diffInDayss = Math.floor((targetDate));
+  let diffInDayss = Math.floor(targetDate);
 
-  let diffInMonthss = Math.floor((diffInDayss) / 30);
-  let diffInDaysss = ((diffInDayss) - (diffInMonthss * 30));
-
+  let diffInMonthss = Math.floor(diffInDayss / 30);
+  let diffInDaysss = diffInDayss - diffInMonthss * 30;
 
   if (diffInMonthss > 0) {
     return `${diffInMonthss} month${diffInMonthss > 1 ? "s" : ""}`;
@@ -230,6 +230,8 @@ function getDuring(targetDate) {
   //   `${diffInDaysss} month${diffInDaysss > 1 ? "s" : ""}`;
   // }
 
-  console.log(diffInDaysss, diffInMonthss);
+  console.log(
+    // diffInDaysss,
+    diffInMonthss
+  );
 }
-

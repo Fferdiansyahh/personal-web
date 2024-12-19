@@ -1,81 +1,36 @@
-<html lang="en">
+{{#> layout title='Testimonials'}}
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Testimonial</title>
-  <link rel="icon" href="asset/img/icon.png" />
-  <link href="/asset/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+<main class="mb-5">
+  <h2 class="text-center my-5">My Testimonials</h2>
 
-  <link rel="stylesheet" href="asset/css/style.css" />
-</head>
+  <h4 class="text-center mb-3">Rating By Star</h4>
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-secondary-subtle">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="Asset/image/icon.png" alt="Bootstrap" width="30" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-orange fw-bold" href="/testimonial">Testimonial
-            </a>
-          </li>
-        </ul>
-        <a class="btn btn-primary" href="/contact">Contact Me</a>
-      </div>
-    </div>
-  </nav>
+  <div class="container-sm text-center d-flex flex-row justify-content-center gap-3">
+    <button onclick="showAllTestimonials()" type="button" class="btn btn-primary">
+      All
+    </button>
+    <button type="button" onclick="filterTestimonialByStar(1)" class="btn btn-primary">
+      1✯
+    </button>
+    <button type="button" onclick="filterTestimonialByStar(2)" class="btn btn-primary">
+      2✯
+    </button>
+    <button type="button" onclick="filterTestimonialByStar(3)" class="btn btn-primary">
+      3✯
+    </button>
+    <button type="button" onclick="filterTestimonialByStar(4)" class="btn btn-primary">
+      4✯
+    </button>
+    <button type="button" onclick="filterTestimonialByStar(5)" class="btn btn-primary">
+      5✯
+    </button>
+  </div>
 
-  <main class="mb-5">
-    <h2 class="text-center my-5">My Testimonials</h2>
+  <div id="testimonialsContainer" class="container-fluid mx-auto px-5 mt-4 row row-cols-md-3">
+    <p>No testimonials.</p>
+  </div>
+</main>
 
-    <h4 class="text-center mb-3">Rating By Star</h4>
+<script src="asset/js/testimonial.js"></script>
 
-    <div class="container-sm text-center d-flex flex-row justify-content-center gap-3">
-      <button onclick="showAllTestimonials()" type="button" class="btn btn-primary">
-        All
-      </button>
-      <button type="button" onclick="filterTestimonialByStar(1)" class="btn btn-primary">
-        1✯
-      </button>
-      <button type="button" onclick="filterTestimonialByStar(2)" class="btn btn-primary">
-        2✯
-      </button>
-      <button type="button" onclick="filterTestimonialByStar(3)" class="btn btn-primary">
-        3✯
-      </button>
-      <button type="button" onclick="filterTestimonialByStar(4)" class="btn btn-primary">
-        4✯
-      </button>
-      <button type="button" onclick="filterTestimonialByStar(5)" class="btn btn-primary">
-        5✯
-      </button>
-    </div>
-
-    <div id="testimonialsContainer" class="container-fluid mx-auto px-5 mt-4 row row-cols-md-3">
-      <p>No testimonials.</p>
-    </div>
-  </main>
-
-  <script src="asset/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="asset/js/testimonial.js"></script>
-</body>
-
-</html>
+{{/layout}}

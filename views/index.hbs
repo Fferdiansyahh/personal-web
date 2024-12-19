@@ -1,86 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+{{#> layout title='Home'}}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Batch 59</title>
-  <link rel="icon" href="/Asset/image/icon.png" />
-  <link rel="stylesheet" href="/Asset/css/style.css" />
-  <link rel="stylesheet" href="/Asset/css/style-index.css" />
-  <link rel="stylesheet" href="/Asset/css/global-font.css" />
-</head>
-
-<body>
-  {{> navbar}}
-
-
-  <div class="kotak1 shadow">
-    <div class="kotak2">
-      <div class="kotaka">
+<main class="kotak1 shadow">
+  <div class="kotak2">
+    <div class="kotaka">
+      <div>
         <div>
+          <h2>Hello it's Ferdian</h2>
+          <p class="k1">
+            Hi There! I'm Ferdiansyah. A Full Stack Web Developer having specialization
+            in back end & front end development. I have experience in Web Development
+            having strong WordPress & WooCommerce Skills. I have Backend Skills in Laravel,
+            cakePHP, WordPress, PHP. I also have Frontend Skills in Javascript,
+            VueJS, Web Components & StencilJS, CSS / SASS, Bootstrap & Foundation.</p>
+        </div>
+      </div>
+      <div class="contact-bts">
+        <div class="contact">
+          <a href="/contact" target="_blank">
+            <img class="contact-img" src="/Asset/image/Contact.PNG" alt="Gambar Tidak ditemukan">
+            </img></a>
+          <!-- <div class="down-img"> --> 
+          <a href="#" target="_blank" class="contact-down align-content-center">
+            <p class="fs-4 m-0">Download CV <img class="btu" src="/Asset/image/Unduh.png" alt="Gambar Tidak ditemukan">
+              </img>   </p>
+          </a>
+        </div>
+        <hr class="hrLine" />
+
+        <div class="link-bts">
           <div>
-            <h2>Hello it's Ferdian</h2>
-            <p class="k1">
-              Hi There! I'm Ferdiansyah. A Full Stack Web Developer having specialization
-              in back end & front end development. I have experience in Web Development
-              having strong WordPress & WooCommerce Skills. I have Backend Skills in Laravel,
-              cakePHP, WordPress, PHP. I also have Frontend Skills in Javascript,
-              VueJS, Web Components & StencilJS, CSS / SASS, Bootstrap & Foundation.</p>
+            <a href="https://www.linkedin.com/in/fferdiansyahh" target="_blank"> <img class="bts"
+                src="/Asset/image/IN.PNG" alt="Gambar Tidak ditemukan"></img></a>
+            <a href="https://www.instagram.com/fferdiansyahh" target="_blank">
+              <img class="bts" src="/Asset/image/IG.PNG" alt="Logo instagram"></img></a>
           </div>
-        </div>
-        <div class="contact-bts">
-          <div class="contact">
-            <a href="/contact" target="_blank">
-              <img class="contact-img" src="/Asset/image/Contact.PNG" alt="Gambar Tidak ditemukan">
-              </img></a>
-            <!-- <div class="down-img"> -->
-            <a href="#" target="_blank" class="contact-down">
-              <p>Download CV <img class="btu" src="/Asset/image/Unduh.png" alt="Gambar Tidak ditemukan">
-                </img> </p>
-            </a>
-          </div>
-          <hr class="hrLine" />
 
-          <div class="link-bts">
-            <div>
-              <a href="https://www.linkedin.com/in/fferdiansyahh" target="_blank"> <img class="bts"
-                  src="/Asset/image/IN.PNG" alt="Gambar Tidak ditemukan"></img></a>
-              <a href="https://www.instagram.com/fferdiansyahh" target="_blank">
-                <img class="bts" src="/Asset/image/IG.PNG" alt="Logo instagram"></img></a>
-            </div>
-
-            <div>
-              <a href="https://www.facebook.com/ferdi8ansyah" target="_blank"><img class="bts" src="/Asset/image/FB.PNG"
-                  alt="Gambar Tidak ditemukan"></img></a>
-              <a href="https://x.com/ferdikito" target="_blank"><img class="bts" src="/Asset/image/X.PNG"
-                  alt="Gambar Tidak ditemukan"></img></a>
-            </div>
+          <div>
+            <a href="https://www.facebook.com/ferdi8ansyah" target="_blank"><img class="bts" src="/Asset/image/FB.PNG"
+                alt="Gambar Tidak ditemukan"></img></a>
+            <a href="https://x.com/ferdikito" target="_blank"><img class="bts" src="/Asset/image/X.PNG"
+                alt="Gambar Tidak ditemukan"></img></a>
           </div>
         </div>
       </div>
-
-
-      <div class="kotakb shadow">
-        <img class=" gb" src="/Asset/image/Img.jpg" alt="Gambar Tidak ditemukan">
-        </img>
-        <h2>Ferdiansyah</h2>
-        <p style="font-size: 15px;">Fullstack Developer</p>
-      </div>
-
     </div>
-    <button id="testButton" type="button" class="class-button">Player - Ferdian </button>
+
+
+    <div class="kotakb shadow">
+      <img class=" gb" src="/Asset/image/Img.jpg" alt="Gambar Tidak ditemukan">
+      </img>
+      <h2>Ferdiansyah</h2>
+      <p style="font-size: 15px;">Fullstack Developer</p>
+    </div>
+
   </div>
-  <!-- <script>
-        // compile the template
-        var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-        // execute the compiled template and print the output to the console
-        console.log(template({ doesWhat: "Good Morning!" }));
-      </script> -->
+  <button id="testButton" type="button" class="class-button">Player - Ferdian </button>
+</main>
 
-</body>
-<!-- <script src="/Asset/js/belajar.js"></script> -->
+
+{{!--
 <script src="/Asset/js/pdf-temp.js"> </script>
-<script src="/Asset/js/pdf.js"> </script>
-
-</html>
+<script src="/Asset/js/pdf.js"> </script> --}}
+{{/layout}}

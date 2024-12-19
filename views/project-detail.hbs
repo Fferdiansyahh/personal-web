@@ -1,0 +1,20 @@
+{{#> layout title='Project Detail'}}
+  <main>
+    <section class="blog-container">
+      <div class="blog-detail-container">
+        <h1>{{data.name}}</h1>        
+        <div class="blog-detail-content">
+          <img class="blog-detail-image" src="/Asset/image/blog-img.png" alt="Detail Blog Image">
+        <div class="detail-content">
+          <p class="detail-blog-content"> Duration : {{getDuring data.sdate data.edate}}</p>
+          <p>{{formatDataToWIB data.postedAt}}</p>
+           <p>Tech : {{data.technologies}} </p>
+        <p >{{data.message}}</p>
+        <p class="relative-time">{{getRelativeTime data.postedAt}}</p>
+        </div>
+           </div>
+      </div>
+    </section>
+  </main>
+
+{{/layout}}

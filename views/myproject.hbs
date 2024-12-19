@@ -1,39 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Project</title>
-  <link rel="icon" href="/Asset/image/icon.png" />
-  <link rel="stylesheet" href="/Asset/css/style.css" />
-  <link rel="stylesheet" href="/Asset/css/style-index.css" />
-
-</head>
-
-<body>
-  {{> navbar}}
-
+{{#> layout title='My Project'}}
 
   <main class="contact-section">
-    <form onsubmit="addBlog(event)" id="contactForm" class="contact-form">
+    {{!-- <form action="/myproject" method="post" class="contact-form">
       <div class="form-title">
         <h2>ADD MY PROJECT</h2>
       </div>
       <div class="form-field">
-        <label for="project-name">Project Name</label>
-        <input id="project-name" name="name" class="form-input" type="text" required />
+        <label for="name">Project Name</label>
+        <input id="name" name="name" class="form-input" type="text" required />
       </div>
 
       <div class="form-date">
         <div class="form-field-date">
-          <label for="start-date">Start Date</label>
-          <input id="start-date" name="start-date" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
+          <label for="sdate">Start Date</label>
+          <input id="sdate" name="sdate" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
             required />
         </div>
         <div class="form-field-date">
-          <label for="end-date">End Date</label>
-          <input id="end-date" name="end-date" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
+          <label for="edate">End Date</label>
+          <input id="edate" name="edate" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
             required />
 
         </div>
@@ -41,7 +26,7 @@
 
       <div class="form-field-area">
         <label class="message-contact" for="message">Your Message</label>
-        <textarea rows="6" id="your-message" name="message" class="form-input-area" required></textarea>
+        <textarea rows="6" id="message" name="message" class="form-input-area" required></textarea>
       </div>
 
 
@@ -77,16 +62,19 @@
         </div>
       </div>
       <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
-    </form>
+    </form> --}}
 
-    <hr class="line" />
+    {{!-- <hr class="line" /> --}}
+    
 
     <section class="blog-container">
-      <div class="project-title">
-        <p>MY PROJECT</p>
-      </div>
+       <a class="btn btn-add  position-absolute top-45 end-0 translate-middle-y" href="/createmyproject">Add Project</a>
+      <div class=" project-title text-center">
+              <p class="">MY PROJECT </p>             
+              </div>
       <div id="blogList" class="blog-list">
-        <div class="blog-list-item">
+
+        {{!-- <div class="blog-list-item">
           <div class="blog-image-title">
             <div class="blog-image">
               <img src="./Asset/image/blog-img.png" alt="blog-image" />
@@ -121,18 +109,57 @@
               <button class="btn-post">Post Blog</button>
             </div>
           </div>
-        </div>
+        </div> --}}
+
+          {{#each blogs }}
+         <div id="${i}" class="blog-list-item">
+          <div class="blog-image-title">
+            <div class="blog-image">
+              <img src="./asset/image/" alt="blog-image" />
+            </div>
+            <div>
+              <p>
+                <a href="/project-detail/{{@index}}" class="blog-item-title">
+                   {{this.name}}
+                </a>
+              </p>
+              <div>
+                <p class="detail-blog-content"> durasi : {{getDuring this.sdate this.edate}}</p>
+                <p>{{formatDataToWIB this.postedAt}}</p>         
+                <p>{{this.technologies}} </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="blog-text">
+            {{this.message}}
+            </p>
+            <p class="relative-time">{{getRelativeTime this.postedAt}}</p>
+          </div>
+          <div>
+            <img class="blog-icon" src="./Asset/image/play.png" alt="Logo Play Store "></img>
+            <img class="blog-icon" src="./Asset/image/andro.png" alt="Logo Android "></img>
+            <img class="blog-icon" src="./Asset/image/java.png" alt="Logo Java "></img>
+          </div>
+          <div class="blog-content">
+            <div class="btn-group">              
+             <a href="/project-edit/{{@index}}"><button class="btn-edit">Edit</button></a>                             
+              <form action="/delete-project{{@index}}?_method=delete" method="post">
+              <button onclick="return confirm('Are you sure want to delete?')"  type="submit" class="btn-delete">Delete</button>
+              </form>
+            </div>
+          </div>
+          </div>
+          {{else}}
+          <p>Belum ada yang di post</p> 
+          {{/each}}
 
 
 
-        <script src="/Asset/js/submitForm.js"></script>
+        {{!-- <script src="/Asset/js/submitForm.js"></script> --}}
       </div>
     </section>
 
   </main>
 
-
-  <!-- <script src="belajar.js"></script> -->
-</body>
-
-</html>
+{{/layout}}

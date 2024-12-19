@@ -1,66 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="icon" href="/Asset/image/icon.png" />
-    <link rel="stylesheet" href="/Asset/css/style.css" />
-    <link rel="stylesheet" href="/Asset/css/style-index.css" />
-
-</head>
-
-<body>
-    {{> navbar}}
+{{#> layout title='Contact'}}
 
 
-    <main class="contact-section">
-        <form id="contactForm" class="contact-form">
-            <div class="form-title">
-                <h2>GET IN TOUCH</h2>
-            </div>
-            <div class="form-field">
-                <label for="name">Name</label>
-                <input id="name" name="name" class="form-input" type="text" required />
-            </div>
+<main class="contact-section">
+    <form id="contactForm" class="contact-form">
+        <div class="form-title">
+            <h2>GET IN TOUCH</h2>
+        </div>
+        <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" class="form-input" type="text" required />
+        </div>
 
-            <div class="form-field">
-                <label for="email">Email</label>
-                <input id="email" name="email" class="form-input" type="email" required />
-            </div>
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" class="form-input" type="email" required />
+        </div>
 
-            <div class="form-field">
-                <label for="phoneNumber">Phone Number</label>
-                <input id="phoneNumber" name="phoneNumber" class="form-input" type="number" required />
-            </div>
+        <div class="form-field">
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" name="phoneNumber" class="form-input" type="number" required />
+        </div>
 
-            <div class="form-field">
-                <label for="subject">Subject</label>
-                <input id="subject" name="subject" class="form-input" required></input>
-            </div>
+        <div class="form-field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" class="form-input" required></input>
+        </div>
 
-            <div class="form-field">
-                <label for="skill">Skill</label>
-                <select id="skill" name="skill" class="form-input" required>
-                    <option></option>
-                    <option value="Frontend">Frontend</option>
-                    <option value="Backend">Backend</option>
+        <div class="form-field">
+            <label for="skill">Skill</label>
+            <select id="skill" name="skill" class="form-input" required>
+                <option></option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
 
-                </select>
-            </div>
+            </select>
+        </div>
 
-            <div class="form-field-area ">
-                <label class="message-contact" for="message">Your Message</label>
-                <textarea rows="6" id="message" name="message" class="form-input-area" required></textarea>
-            </div>
+        <div class="form-field-area ">
+            <label class="message-contact" for="message">Your Message</label>
+            <textarea rows="6" id="message" name="message" class="form-input-area" required></textarea>
+        </div>
 
-            <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
-        </form>
-    </main>
+        <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
+    </form>
+</main>
 
-    <script src="/Asset/js/contact.js"></script>
-    <!-- <script src="belajar.js"></script> -->
-</body>
-
-</html>
+<script src="/Asset/js/contact.js"></script>
+{{/layout}}

@@ -111,8 +111,8 @@ nav a {
 }
 
 .contact-down {
-  text-align: justify;
-  width: 100%;
+  align-items: center;
+  width: max-content;
   box-sizing: border-box;
   padding: 0px;
   text-decoration: none;
@@ -171,7 +171,8 @@ nav a {
 .btu {
   height: 12px;
   width: 12;
-  padding-left: 5px;
+  margin: 0px !important;
+  align-items: center;
 }
 
 .bts {
@@ -314,4 +315,19 @@ nav a {
   border-radius: 10px;
   padding: 3px 10px;
   cursor: pointer;
+}
+
+.text-orange {
+  color: orangered !important;
+}
+
+.btn-orange {
+  background-color: orangered;
+  color: white;
+}
+
+.btn-add {
+  background-color: orangered;
+  color: white;
+  margin: 25px 15px;
 }

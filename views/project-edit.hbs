@@ -1,0 +1,71 @@
+{{#> layout title='Edit Project'}}
+
+  <main class="contact-section">
+    <form action="/project-update{{index}}?_method=patch" method="post" class="contact-form" >
+      <div class="form-title">
+        <h2>EDIT PROJECT</h2>
+      </div>
+      <div class="form-field">
+        <label for="name">Project Name</label>
+        <input id="name" name="name" class="form-input" type="text" value="{{data.name}}" required />
+      </div>
+
+      <div class="form-date">
+        <div class="form-field-date">
+          <label for="sdate">Start Date</label>
+          <input id="sdate" name="sdate" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
+          value="{{data.sdate}}"
+            required />
+        </div>
+        <div class="form-field-date">
+          <label for="edate">End Date</label>
+          <input id="edate" name="edate" class="form-input-date" type="date" min="2023-01-01" max="2030-12-31"
+           value="{{data.edate}}" required />
+
+        </div>
+      </div>
+
+      <div class="form-field-area">
+        <label class="message-contact" for="message">Your Message</label>
+        <textarea rows="6" id="message" name="message" class="form-input-area" required>{{data.message}}</textarea>
+      </div>
+
+      <div class="form-field-box">
+        <div>
+          <label>Technologies</label>
+        </div>
+      </div>
+      <div class="form-input-box" >
+        <div>
+          <input type="checkbox" id="" name="technologies" value="nodejs">
+          <label for="nodejs">Node Js</label><br>
+          <input type="checkbox" id="" name="technologies" value="nextjs">
+          <label for="nextjs">Next Js</label>
+        </div>
+        <div>
+          <input type="checkbox" id="" name="technologies" value="reachjs">
+          <label for="reachjs">Reach Js</label><br>
+          <input type="checkbox" id="typescript" name="technologies" value="typescript">
+          <label for="TypeScript">TypeScript</label>
+        </div>
+      </div>
+
+
+      <div class="form-field-image">
+        <label for="upload-image">Upload Image</label>
+        <div for="upload-image" class="input-image">
+          <div class="choose">
+            <label for="upload-image">choose</label>
+          </div>
+          <input id="upload-image" name="upload-image" hidden type="file" required placeholder="upload image" />
+        </div>
+      </div>
+      <div class="form-button"><button type="submit" class="form-submit-button">Submit</button></div>
+    </form>
+
+  
+
+    
+  </main>
+
+{{/layout}}
